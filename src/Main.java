@@ -4,13 +4,16 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         List<Product> productList = new ArrayList<>();
-        productList.add(new BottleOFWater("qwe", 123, 100));
-        productList.add(new BottleOFWater("qwe", 200, 150));
-        productList.add(new BottleOFWater("zxcg", 500, 1000));
-        productList.add(new BottleOFWater("qaffwe", 123, 10));
-        BottleOfWaterVendingMachine vendingMachine = new BottleOfWaterVendingMachine();
+        productList.add(new HotDrink ("Coffe", 20, 250, 70));
+        productList.add(new HotDrink ("Coffe", 30, 500, 70));
+        productList.add(new HotDrink ("Tea", 20, 250, 80));
+        productList.add(new HotDrink ("Tea", 30, 500, 90));
+        HotDrinkVendingMachine vendingMachine = new HotDrinkVendingMachine();
         vendingMachine.initProduct(productList);
-        System.out.println(vendingMachine.getProduct("qwe", 150));
-        Product test = new BottleOFWater("asd", 123, 123);
+        System.out.println(vendingMachine.getProduct("Coffe",250, 70));
+        System.out.println(vendingMachine.getProduct("Tea"));
+        System.out.println(vendingMachine.getProduct("Tea",500));
+
+
     }
 }
