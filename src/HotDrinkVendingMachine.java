@@ -1,30 +1,32 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class BottleOfWaterVendingMachine implements VendingMachine{
+public class HotDrinkVendingMachine implements VendingMachine {
+
     private List<Product> productList = new ArrayList<>();
+
     public void initProduct(List<Product> productList) {
         this.productList = productList;
     }
 
     public Product getProduct(String name) {
         for (Product item : productList)
-            if(item.getName().equals(name))
+            if (item.getName().equals(name))
                 return item;
         return null;
     }
 
-    public Product getProduct(String name, int volume){
+    public Product getProduct(String name,int volume, int temperature) {
         for (Product item : productList)
-            if(item.getName().equals(name) && ((BottleOFWater) item).getVolume() == volume)
+            if (item.getName().equals(name) &&((HotDrink) item).getVolume() == volume && ((HotDrink)item).getTemperature() == temperature)
                 return item;
+        return null;
+    }
+    public Product getProduct(String name,int volume) {
+        for (Product item : productList)
+            if (item.getName().equals(name) &&((HotDrink) item).getVolume() == volume)
+            return item;
         return null;
     }
 
-    public Product getProduct(int volume){
-        for (Product item : productList)
-            if(((BottleOFWater) item).getVolume() == volume)
-                return item;
-        return null;
-    }
 }

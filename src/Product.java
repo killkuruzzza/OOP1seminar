@@ -23,7 +23,6 @@ public abstract class Product {
         this.cost = cost;
     }
 
-    @Override
     public String toString() {
         return "Product{" +
                 "name='" + name + '\'' +
